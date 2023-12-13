@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 interface CardProps {
   title: string;
   description: string;
@@ -7,7 +9,7 @@ interface CardProps {
 export const Card = ({ title, description, imageUrl }: CardProps) => {
   return (
     <div className="card">
-      <img src={imageUrl} alt={title} />
+      <Image src={imageUrl} alt={title} />
       <h2>{title}</h2>
       <p>{description}</p>
     </div>

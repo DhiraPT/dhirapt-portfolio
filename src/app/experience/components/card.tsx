@@ -1,4 +1,5 @@
 interface CardProps {
+  key: React.Key;
   title: String;
   company: String;
   startDate: String;
@@ -21,8 +22,10 @@ export const Card = ({
         <p className="text-gray-500">
           {startDate} - {endDate}
         </p>
-        {description.map((desc: String) => (
-          <p className="text-gray-500">{desc}</p>
+        {description.map((desc: String, index) => (
+          <p key={index} className="text-gray-500">
+            {desc}
+          </p>
         ))}
       </div>
     </li>
