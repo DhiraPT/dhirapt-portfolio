@@ -1,0 +1,19 @@
+{
+  "projects": [
+    {
+      "title": "NUS STATISTICS AND DATA SCIENCE MINI-PROJECT: DATA THE EXPLORER",
+      "date": "September 2023",
+      "description": "Achieved 2nd place in this 2-hour Exploratory Data Analysis competition, where the challenge was to transform a real-world dataset into comprehensive visual representations."
+    },
+    {
+      "title": "GO DIGITAL ASEAN TECH FOR GOOD INNOVATION CHALLENGE",
+      "date": "August 2020-February 2021",
+      "description": "Developed a BIOS screen reader for the visually impaired using computer vision as the underlying technology and Flutter as the framework for user interface."
+    },
+    {
+      "title": "IDEATE 2022",
+      "date": "August 2022",
+      "description": "Designed a prototype of an app to address mental illness in elderly people in Singapore. The app allows them to find friends, sign up for community activities and match up with volunteers."
+    }
+  ]
+}

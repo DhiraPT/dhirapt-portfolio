@@ -1,0 +1,23 @@
+"use client";
+
+import { TypeAnimation } from "react-type-animation";
+
+export const TypeComponent = () => {
+  return (
+    <TypeAnimation
+      sequence={[
+        // Same substring at the start will only be typed out once, initially
+        "I am a student",
+        1000, // wait 1s before replacing "Mice" with "Hamsters"
+        "I am a software developer",
+        1000,
+        "I am a trader",
+        1000,
+      ]}
+      wrapper="span"
+      speed={50}
+      style={{ fontSize: "2em", display: "inline-block" }}
+      repeat={Infinity}
+    />
+  );
+};
