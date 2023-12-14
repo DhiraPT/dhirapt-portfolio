@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Links } from "./components/links";
 import { ContactBar } from "./components/contact_bar";
+import { Analytics } from "@vercel/analytics/react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,6 +23,7 @@ export default function RootLayout({
         <Links />
         {children}
         <ContactBar />
+        <Analytics />
       </body>
     </html>
   );
