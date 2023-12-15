@@ -1,5 +1,5 @@
 import { promises as fs } from "fs";
-import { Card } from "./components/card";
+import { ProjectCard } from "./components/project-card";
 import { Key } from "react";
 
 export default async function Page() {
@@ -9,22 +9,20 @@ export default async function Page() {
   );
   const data = JSON.parse(file);
   return (
-    <main className="flex flex-col items-center justify-between">
-      <ul className="flex flex-col space-y-4">
-        {data.projects.map(
-          (
-            project: { title: string; description: string; imageUrl: string },
-            index: Key,
-          ) => (
-            <Card
-              key={index}
-              title={project.title}
-              description={project.description}
-              imageUrl={project.imageUrl}
-            />
-          ),
-        )}
-      </ul>
+    <main className="md-grid-cols-2 grid grid-cols-1 space-x-4 lg:grid-cols-3">
+      {data.projects.map(
+        (
+          project: { title: string; description: string; image: string },
+          index: Key,
+        ) => (
+          <ProjectCard
+            key={index}
+            title={project.title}
+            description={project.description}
+            image={project.image}
+          />
+        ),
+      )}
     </main>
   );
 }

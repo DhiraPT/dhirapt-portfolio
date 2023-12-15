@@ -1,5 +1,5 @@
 import { promises as fs } from "fs";
-import { Card } from "./components/card";
+import { ExperienceCard } from "./components/experience-card";
 import { Key } from "react";
 
 export default async function Page() {
@@ -22,7 +22,7 @@ export default async function Page() {
             },
             index: Key,
           ) => (
-            <Card
+            <ExperienceCard
               key={index}
               title={experience.title}
               company={experience.company}

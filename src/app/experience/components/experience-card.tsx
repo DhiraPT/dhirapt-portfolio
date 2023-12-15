@@ -1,4 +1,4 @@
-interface CardProps {
+interface ExperienceCardProps {
   key: React.Key;
   title: String;
   company: String;
@@ -7,23 +7,23 @@ interface CardProps {
   description: String[];
 }
 
-export const Card = ({
+export const ExperienceCard = ({
   title,
   company,
   startDate,
   endDate,
   description,
-}: CardProps) => {
+}: ExperienceCardProps) => {
   return (
     <li className="text font-bold">
-      <div className="rounded-lg bg-white p-6 shadow-md">
-        <h2 className="text-2xl font-bold">{title}</h2>
-        <p className="text-gray-500">{company}</p>
-        <p className="text-gray-500">
+      <div className="rounded-lg bg-slate-100 p-6 shadow-md">
+        <h2 className="text-2xl font-bold text-zinc-900">{title}</h2>
+        <p className="text-zinc-900">{company}</p>
+        <p className="text-zinc-900">
           {startDate} - {endDate}
         </p>
         {description.map((desc: String, index) => (
-          <p key={index} className="text-gray-500">
+          <p key={index} className="text-zinc-900">
             {desc}
           </p>
         ))}

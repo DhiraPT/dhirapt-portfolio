@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Links } from "./components/links";
-import { ContactBar } from "./components/contact_bar";
+import { ContactBar } from "./components/contact-bar";
 import { Analytics } from "@vercel/analytics/react";
+import ThemeSwitcher from "./components/theme-switcher";
+import ThemeProvider from "./theme-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,11 +21,21 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className + " flex min-h-screen flex-col px-12"}>
-        <Links />
-        {children}
-        <ContactBar />
-        <Analytics />
+      <body
+        className={
+          inter.className +
+          " flex min-h-screen flex-col bg-slate-100 px-12 dark:bg-zinc-900"
+        }
+      >
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <div className="flex flex-row items-center justify-between">
+            <Links />
+            <ThemeSwitcher />
+          </div>
+          {children}
+          <ContactBar />
+          <Analytics />
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -11,7 +11,7 @@ export const TypeComponent = () => {
         1000, // wait 1s before replacing "Mice" with "Hamsters"
         "I am a software developer",
         1000,
-        "I am a trader",
+        "I am a mental wellness ambassador",
         1000,
       ]}
       wrapper="span"

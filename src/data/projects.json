@@ -1,13 +1,14 @@
 {
   "projects": [
     {
-      "title": "NUS STATISTICS AND DATA SCIENCE MINI-PROJECT: DATA THE EXPLORER",
+      "title": "NUS Statistics and Data Science Mini-Project: Data the Explorer",
       "date": "September 2023",
-      "description": "Achieved 2nd place in this 2-hour Exploratory Data Analysis competition, where the challenge was to transform a real-world dataset into comprehensive visual representations."
+      "description": "Achieved 2nd place in this 2-hour Exploratory Data Analysis competition, where the challenge was to transform a real-world dataset into comprehensive visual representations.",
+      "image": "data-the-explorer.jpg"
     },
     {
-      "title": "GO DIGITAL ASEAN TECH FOR GOOD INNOVATION CHALLENGE",
-      "date": "August 2020-February 2021",
+      "title": "Go Digital ASEAN 2020, a Tech For Good Innovation Challenge",
+      "date": "August 2020 - February 2021",
       "description": "Developed a BIOS screen reader for the visually impaired using computer vision as the underlying technology and Flutter as the framework for user interface."
     },
     {
