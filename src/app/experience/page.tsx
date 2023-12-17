@@ -9,8 +9,8 @@ export default async function Page() {
   );
   const data = JSON.parse(file);
   return (
-    <main className="flex flex-col items-center justify-between">
-      <ul className="flex flex-col space-y-4">
+    <main className="flex flex-col items-center justify-between md:px-4 xl:px-8">
+      <ul className="flex flex-col space-y-8">
         {data.experience.map(
           (
             experience: {
@@ -32,6 +32,11 @@ export default async function Page() {
             />
           ),
         )}
+        <li className="rounded-lg bg-white p-6 shadow-md">
+          <h2 className="text-2xl font-bold text-zinc-900">
+            Could be your company :&#41;
+          </h2>
+        </li>
       </ul>
     </main>
   );

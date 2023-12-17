@@ -24,7 +24,7 @@ export default function RootLayout({
       <body
         className={
           inter.className +
-          " flex min-h-screen flex-col bg-slate-100 px-12 dark:bg-zinc-900"
+          " flex min-h-screen flex-col bg-white px-4 pb-4 dark:bg-zinc-900 sm:px-8 xl:px-12"
         }
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>

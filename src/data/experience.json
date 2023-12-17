@@ -9,15 +9,6 @@
         "Collaborated with other developers for designing, developing, and maintaining the website architecture using Next.js with Typescript.",
         "Developed the database system using Prisma, wrote tRPC APIs, and designed the UI using Tailwind CSS."
       ]
-    },
-    {
-      "title": "Data Science Intern",
-      "company": "XYZ Corporation",
-      "startDate": "2020-09-01",
-      "endDate": "2020-12-31",
-      "description": [
-        "Assisted in analyzing and visualizing large datasets using Python and data visualization libraries. Developed machine learning models to predict customer behavior. Presented findings to the data science team and provided recommendations for improving business strategies."
-      ]
     }
   ]
 }

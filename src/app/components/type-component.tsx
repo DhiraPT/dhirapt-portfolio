@@ -16,7 +16,7 @@ export const TypeComponent = () => {
       ]}
       wrapper="span"
       speed={50}
-      style={{ fontSize: "2em", display: "inline-block" }}
+      style={{ fontSize: "30px", display: "inline-block", textAlign: "center" }}
       repeat={Infinity}
     />
   );

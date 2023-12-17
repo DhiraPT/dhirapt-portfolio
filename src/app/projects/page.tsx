@@ -9,17 +9,27 @@ export default async function Page() {
   );
   const data = JSON.parse(file);
   return (
-    <main className="md-grid-cols-2 grid grid-cols-1 space-x-4 lg:grid-cols-3">
+    <main className="grid grid-cols-1 gap-4 md:grid-cols-2 md:px-4 xl:grid-cols-3 xl:gap-x-8 xl:px-8">
       {data.projects.map(
         (
-          project: { title: string; description: string; image: string },
+          project: {
+            title: string;
+            date: string;
+            description: string;
+            image: string;
+            video: string;
+            link: string;
+          },
           index: Key,
         ) => (
           <ProjectCard
             key={index}
             title={project.title}
+            date={project.date}
             description={project.description}
             image={project.image}
+            video={project.video}
+            link={project.link}
           />
         ),
       )}

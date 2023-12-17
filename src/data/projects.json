@@ -4,17 +4,22 @@
       "title": "NUS Statistics and Data Science Mini-Project: Data the Explorer",
       "date": "September 2023",
       "description": "Achieved 2nd place in this 2-hour Exploratory Data Analysis competition, where the challenge was to transform a real-world dataset into comprehensive visual representations.",
-      "image": "data-the-explorer.jpg"
+      "image": "data-the-explorer.png",
+      "link": "https://www.linkedin.com/posts/nussds_eda-competition-dataviz-activity-7113024716256280577-ZhtO"
     },
     {
       "title": "Go Digital ASEAN 2020, a Tech For Good Innovation Challenge",
       "date": "August 2020 - February 2021",
-      "description": "Developed a BIOS screen reader for the visually impaired using computer vision as the underlying technology and Flutter as the framework for user interface."
+      "description": "This project aims to develop a BIOS screen reader designed for visually impaired engineers. It is supported by both Google.org and our client, SG Enable. The mobile app utilizes the Flutter framework for its UI/UX, incorporates a Tensorflow model for screen classification, and leverages Google's ML Kit for text recognition.",
+      "image": "preboot-screenreader.png",
+      "link": "https://www.engineeringgood.org/assistive-tech-t4g-home/program"
     },
     {
       "title": "IDEATE 2022",
       "date": "August 2022",
-      "description": "Designed a prototype of an app to address mental illness in elderly people in Singapore. The app allows them to find friends, sign up for community activities and match up with volunteers."
+      "description": "Designed a prototype of an app to address mental illness in elderly people in Singapore. The app allows them to find friends, sign up for community activities and match up with volunteers.",
+      "video": "silver-circles.mp4",
+      "link": "https://www.figma.com/proto/22zMlnMwEa9HkOt1rByKfC/SilverCircles"
     }
   ]
 }
