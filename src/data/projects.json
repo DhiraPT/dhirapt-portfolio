@@ -1,6 +1,13 @@
 {
   "projects": [
     {
+      "title": "Breakthrough AI",
+      "date": "",
+      "description": "This project showcases an intelligent agent for the abstract strategy game \"Breakthrough.\". The AI leverages iterative deepening alpha-beta pruning and a multi-faceted evaluation function to analyze the game state strategically. It considers crucial factors like piece proximity to the goal, capture opportunity, and diagonal formation potential.",
+      "image": "breakthrough-ai.png",
+      "link": "https://breakthrough-ai.vercel.app"
+    },
+    {
       "title": "NUS Statistics and Data Science Mini-Project: Data the Explorer",
       "date": "September 2023",
       "description": "Achieved 2nd place in this 2-hour Exploratory Data Analysis competition, where the challenge was to transform a real-world dataset into comprehensive visual representations.",

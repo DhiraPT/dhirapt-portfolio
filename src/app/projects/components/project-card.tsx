@@ -22,7 +22,12 @@ export const ProjectCard = ({
     <div className="group/item-card">
       <div className="relative aspect-square overflow-hidden">
         {image ? (
-          <Image src={"/" + image} alt={title} fill objectFit="contain" />
+          <Image
+            src={"/" + image}
+            alt={title}
+            fill
+            style={{ objectFit: "contain" }}
+          />
         ) : (
           <video className="h-full w-auto" controls>
             <source src={video} type="video/mp4" />
