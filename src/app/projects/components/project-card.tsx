@@ -5,8 +5,7 @@ interface ProjectCardProps {
   title: string;
   date: string;
   description: string;
-  image: string;
-  video: string;
+  mediaUrl: string;
   link: string;
 }
 
@@ -14,23 +13,23 @@ export const ProjectCard = ({
   title,
   date,
   description,
-  image,
-  video,
+  mediaUrl,
   link,
 }: ProjectCardProps) => {
+  const isImage = mediaUrl.endsWith(".png") || mediaUrl.endsWith(".jpg");
   return (
     <div className="group/item-card">
       <div className="relative aspect-square overflow-hidden">
-        {image ? (
+        {isImage ? (
           <Image
-            src={"/" + image}
+            src={mediaUrl}
             alt={title}
             fill
             style={{ objectFit: "contain" }}
           />
         ) : (
           <video className="h-full w-auto" controls>
-            <source src={video} type="video/mp4" />
+            <source src={mediaUrl} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         )}

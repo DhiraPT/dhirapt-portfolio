@@ -1,10 +1,10 @@
 interface ExperienceCardProps {
   key: React.Key;
-  title: String;
-  company: String;
-  startDate: String;
-  endDate: String;
-  description: String[];
+  title: string;
+  company: string;
+  startDate: string;
+  endDate: string;
+  description: string[];
 }
 
 export const ExperienceCard = ({
@@ -21,11 +21,13 @@ export const ExperienceCard = ({
       <p className="font-semibold text-zinc-900">
         {startDate} - {endDate}
       </p>
-      {description.map((desc: String, index) => (
-        <p key={index} className="text-zinc-900">
-          {desc}
-        </p>
-      ))}
+      <ul>
+        {description.map((desc: String, index) => (
+          <li key={index} className="text-zinc-900">
+            &#8226; {desc}
+          </li>
+        ))}
+      </ul>
     </li>
   );
 };
