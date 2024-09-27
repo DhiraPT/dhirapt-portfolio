@@ -1,19 +1,24 @@
-import Image from "next/image";
-import { TypeComponent } from "./components/type-component";
+import { supabase } from "@/utils/supabase";
+import Home from "./sections/home/home";
+import Experience from "./sections/experience/experience";
+import Projects from "./sections/projects/projects";
 
-export default function Home() {
+export default async function Page() {
+  const { data: experiences } = await supabase
+    .from("Experiences")
+    .select()
+    .order("end_date", { ascending: false });
+
+  const { data: projects } = await supabase
+    .from("Projects")
+    .select()
+    .order("end_date", { ascending: false });
+
   return (
-    <main className="flex flex-1 flex-col items-center justify-center space-y-4 text-zinc-900 dark:text-white">
-      <p className="text-4xl font-bold">
-        Hi, I&apos;m <span className="text-blue-500">Dhira</span>
-      </p>
-      <TypeComponent />
-      <p className="text-center text-xl">
-        I&apos;m a student at National University of Singapore pursuing Bachelor
-        of Computing (Honours) in Computer Science with a Second Major in
-        Quantitative Finance.
-        <br />I love discovering unknown life hacks.
-      </p>
+    <main className="flex flex-1 flex-col items-center justify-center text-zinc-900 dark:text-white">
+      <Home />
+      <Experience experiences={experiences} />
+      <Projects projects={projects} />
     </main>
   );
 }

@@ -24,11 +24,11 @@ export default function RootLayout({
       <body
         className={
           inter.className +
-          " flex min-h-screen flex-col bg-white px-4 pb-4 dark:bg-zinc-900 sm:px-8 xl:px-12"
+          " flex min-h-screen flex-col bg-white dark:bg-zinc-900"
         }
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <div className="flex flex-row items-center justify-between">
+          <div className="fixed left-0 top-0 z-50 flex w-full flex-row items-center justify-between bg-white px-4 dark:bg-zinc-900 sm:px-8 xl:px-12">
             <Links />
             <ThemeSwitcher />
           </div>

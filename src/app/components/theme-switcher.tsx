@@ -21,8 +21,7 @@ const ThemeSwitcher = () => {
     <Switch
       checked={theme === "dark"}
       onChange={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className={`${theme === "dark" ? "bg-white" : "bg-zinc-900"}
-          relative inline-flex h-8 w-16 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white/75`}
+      className={`${theme === "dark" ? "bg-white" : "bg-zinc-900"} relative inline-flex h-8 w-16 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75`}
     >
       <IconContext.Provider value={{ size: "40" }}>
         <div className="absolute inset-0 flex items-center justify-center">
@@ -36,8 +35,7 @@ const ThemeSwitcher = () => {
           theme === "dark"
             ? "translate-x-8 bg-zinc-900"
             : "translate-x-0 bg-white"
-        }
-            pointer-events-none inline-block h-7 w-7 transform rounded-full shadow-lg ring-0 transition duration-200 ease-in-out`}
+        } pointer-events-none inline-block h-7 w-7 transform rounded-full shadow-lg ring-0 transition duration-200 ease-in-out`}
       />
     </Switch>
   );

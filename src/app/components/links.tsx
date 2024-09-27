@@ -16,16 +16,16 @@ export const Links = () => {
         </li>
         <li>
           <Link
-            className={`link ${pathname === "/experience" ? "active" : ""}`}
-            href="/experience"
+            className={`link ${pathname === "/#experience" ? "active" : ""}`}
+            href="#experience"
           >
             Experience
           </Link>
         </li>
         <li>
           <Link
-            className={`link ${pathname === "/projects" ? "active" : ""}`}
-            href="/projects"
+            className={`link ${pathname === "/#projects" ? "active" : ""}`}
+            href="#projects"
           >
             Projects
           </Link>
