@@ -1,50 +1,66 @@
 import Image from "next/image";
-import Link from "next/link";
+import { FiArrowUpRight } from "react-icons/fi";
 
 interface ProjectCardProps {
+  index: number;
   title: string;
   date: string;
   description: string;
   mediaUrl: string;
   link: string;
+  isModalOpen: boolean;
+  setIsModalOpen: (value: boolean) => void;
+  setSelectedProjectIndex: (value: number | null) => void;
 }
 
 export const ProjectCard = ({
+  index,
   title,
   date,
   description,
   mediaUrl,
   link,
+  isModalOpen,
+  setIsModalOpen,
+  setSelectedProjectIndex,
 }: ProjectCardProps) => {
   const isImage = mediaUrl.endsWith(".png") || mediaUrl.endsWith(".jpg");
+
+  const onViewDetailsClick = () => {
+    setSelectedProjectIndex(index);
+    setIsModalOpen(true);
+  };
+
   return (
-    <div className="group/item-card">
+    <div className="group/project-card relative cursor-pointer overflow-hidden rounded-lg shadow-lg transition-all duration-300 ease-in-out hover:shadow-xl">
       <div className="relative aspect-square overflow-hidden">
         {isImage ? (
           <Image
             src={mediaUrl}
             alt={title}
             fill
-            style={{ objectFit: "contain" }}
+            className="object-cover transition-transform duration-300 ease-in-out group-hover/project-card:scale-110"
           />
         ) : (
-          <video className="h-full w-auto" controls>
-            <source src={mediaUrl} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          <div className="flex h-full w-full items-center justify-center bg-gray-200 text-gray-500">
+            No image available
+          </div>
         )}
+        <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 transition-opacity duration-300 group-hover/project-card:opacity-100" />
       </div>
-      <div className="flex flex-col justify-between p-2">
-        <h2 className="text-2xl font-bold text-zinc-900 dark:text-white">
+      <div className="absolute inset-0 flex flex-col justify-end p-4 text-white">
+        <h2 className="mb-1 transform text-2xl font-bold opacity-0 transition-all duration-300 ease-in-out group-hover/project-card:-translate-y-1 group-hover/project-card:opacity-100">
           {title}
         </h2>
-        <p className="pb-2 font-semibold text-zinc-900 dark:text-white">
-          {date}
-        </p>
-        <p className="pb-1 text-zinc-900 dark:text-white">{description}</p>
-        <Link href={link} target="_blank" className="underline" rel="noopener">
-          Go to Project
-        </Link>
+        {/* <p className="font-semibold mb-2 opacity-0 transform translate-y-2 transition-all duration-300 ease-in-out group-hover/project-card:opacity-100 group-hover/project-card:translate-y-0">{date}</p>
+        <p className="mb-4 opacity-0 transform translate-y-2 transition-all duration-300 ease-in-out group-hover/project-card:opacity-100 group-hover/project-card:translate-y-0">{description}</p> */}
+        <span
+          className="inline-flex translate-y-2 transform items-center rounded-full bg-blue-600 px-4 py-2 text-white opacity-0 transition-all duration-300 ease-in-out hover:bg-blue-700 group-hover/project-card:translate-y-0 group-hover/project-card:opacity-100"
+          onClick={onViewDetailsClick}
+        >
+          View Details
+          <FiArrowUpRight className="ml-1" size={22} />
+        </span>
       </div>
     </div>
   );

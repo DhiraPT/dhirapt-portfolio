@@ -1,5 +1,6 @@
-import Image from "next/image";
+import Link from "next/link";
 import { TypeComponent } from "../../components/type-component";
+import { BsChevronDoubleDown } from "react-icons/bs";
 
 export default function Home() {
   return (
@@ -17,6 +18,12 @@ export default function Home() {
         Quantitative Finance.
         <br />I love discovering unknown life hacks.
       </p>
+      <Link href="#experience">
+        <div className="absolute bottom-4 left-1/2 flex -translate-x-1/2 transform cursor-pointer flex-col items-center">
+          <p className="mb-2 text-center text-sm">Scroll Down</p>
+          <BsChevronDoubleDown className="animate-bounce text-3xl" />
+        </div>
+      </Link>
     </section>
   );
 }

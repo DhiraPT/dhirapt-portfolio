@@ -15,7 +15,7 @@ export default async function Page() {
     .order("end_date", { ascending: false });
 
   return (
-    <main className="flex flex-1 flex-col items-center justify-center text-zinc-900 dark:text-white">
+    <main className="mb-8 flex flex-1 flex-col items-center justify-center text-zinc-900 dark:text-white">
       <Home />
       <Experience experiences={experiences} />
       <Projects projects={projects} />

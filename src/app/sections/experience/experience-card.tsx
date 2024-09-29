@@ -31,13 +31,15 @@ export const ExperienceCard = ({
       transition={{ duration: 0.5, ease: "easeOut" }}
     >
       <h2 className="text-2xl font-bold text-zinc-900">{title}</h2>
-      <p className="font-semibold text-zinc-900">{company}</p>
-      <p className="font-semibold text-zinc-900">
+      <p className="text-sm font-semibold text-zinc-900 sm:text-base">
+        {company}
+      </p>
+      <p className="text-sm font-semibold text-zinc-900 sm:text-base">
         {startDate} - {endDate}
       </p>
       <ul>
         {description.map((desc: String, index) => (
-          <li key={index} className="text-zinc-900">
+          <li key={index} className="text-sm text-zinc-900 sm:text-base">
             &#8226; {desc}
           </li>
         ))}
