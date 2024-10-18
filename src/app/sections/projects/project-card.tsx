@@ -30,7 +30,7 @@ export const ProjectCard = ({
   };
 
   return (
-    <div className="group/project-card relative cursor-pointer overflow-hidden rounded-lg shadow-lg transition-all duration-300 ease-in-out hover:shadow-xl">
+    <div className="group/project-card relative overflow-hidden rounded-lg shadow-lg transition-all duration-300 ease-in-out hover:shadow-xl">
       <div className="relative aspect-square overflow-hidden">
         {coverMediaUrl ? (
           <Image
@@ -53,7 +53,7 @@ export const ProjectCard = ({
         {/* <p className="font-semibold mb-2 opacity-0 transform translate-y-2 transition-all duration-300 ease-in-out group-hover/project-card:opacity-100 group-hover/project-card:translate-y-0">{date}</p>
         <p className="mb-4 opacity-0 transform translate-y-2 transition-all duration-300 ease-in-out group-hover/project-card:opacity-100 group-hover/project-card:translate-y-0">{description}</p> */}
         <span
-          className="inline-flex translate-y-2 transform items-center rounded-full bg-blue-600 px-4 py-2 text-white opacity-0 transition-all duration-300 ease-in-out hover:bg-blue-700 group-hover/project-card:translate-y-0 group-hover/project-card:opacity-100"
+          className="inline-flex translate-y-2 transform cursor-pointer items-center rounded-full bg-blue-600 px-4 py-2 text-white opacity-0 transition-all duration-300 ease-in-out hover:bg-blue-700 group-hover/project-card:translate-y-0 group-hover/project-card:opacity-100"
           onClick={onViewDetailsClick}
         >
           View Details
