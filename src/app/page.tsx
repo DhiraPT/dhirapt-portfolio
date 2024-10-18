@@ -3,6 +3,8 @@ import Home from "./sections/home/home";
 import Experience from "./sections/experience/experience";
 import Projects from "./sections/projects/projects";
 
+export const revalidate = 60;
+
 export default async function Page() {
   const { data: experiences } = await supabase
     .from("Experiences")
