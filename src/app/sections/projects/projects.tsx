@@ -40,7 +40,7 @@ export default function Projects({ projects }: { projects: Project[] | null }) {
             title={project.title}
             date={parseDate(project.start_date, project.end_date)}
             description={project.description}
-            mediaUrl={project.media_url}
+            coverMediaUrl={project.cover_media_url}
             link={project.link}
             isModalOpen={isModalOpen}
             setIsModalOpen={setIsModalOpen}

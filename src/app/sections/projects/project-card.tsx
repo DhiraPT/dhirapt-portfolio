@@ -6,7 +6,7 @@ interface ProjectCardProps {
   title: string;
   date: string;
   description: string;
-  mediaUrl: string;
+  coverMediaUrl: string | null;
   link: string;
   isModalOpen: boolean;
   setIsModalOpen: (value: boolean) => void;
@@ -18,14 +18,12 @@ export const ProjectCard = ({
   title,
   date,
   description,
-  mediaUrl,
+  coverMediaUrl,
   link,
   isModalOpen,
   setIsModalOpen,
   setSelectedProjectIndex,
 }: ProjectCardProps) => {
-  const isImage = mediaUrl.endsWith(".png") || mediaUrl.endsWith(".jpg");
-
   const onViewDetailsClick = () => {
     setSelectedProjectIndex(index);
     setIsModalOpen(true);
@@ -34,9 +32,9 @@ export const ProjectCard = ({
   return (
     <div className="group/project-card relative cursor-pointer overflow-hidden rounded-lg shadow-lg transition-all duration-300 ease-in-out hover:shadow-xl">
       <div className="relative aspect-square overflow-hidden">
-        {isImage ? (
+        {coverMediaUrl ? (
           <Image
-            src={mediaUrl}
+            src={coverMediaUrl}
             alt={title}
             fill
             className="object-cover transition-transform duration-300 ease-in-out group-hover/project-card:scale-110"
