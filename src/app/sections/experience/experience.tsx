@@ -26,8 +26,9 @@ export default function Experience({
   });
 
   const bulletAnimation = {
-    initial: { backgroundColor: "#d1d5db" }, // gray-300
-    animate: { backgroundColor: "#3b82f6" }, // blue-500
+    initial: { scale: 0.8, backgroundColor: "#d1d5db" },
+    animate: { scale: 1, backgroundColor: "#3b82f6" },
+    transition: { type: "spring", stiffness: 300, damping: 20 },
   };
 
   return (
@@ -38,7 +39,7 @@ export default function Experience({
       <h2 className="mb-8 mt-4 text-center text-4xl font-extrabold">
         My Experience
       </h2>
-      <div className="relative flex w-full space-x-12 sm:space-x-16 xl:space-x-24">
+      <div className="relative flex w-full flex-col space-y-12 sm:flex-row sm:space-x-16 xl:space-x-24">
         {/* Container for Timeline Bar and Bullet Points */}
         <div className="relative flex flex-col items-center">
           {/* Background Timeline Bar */}
@@ -47,7 +48,7 @@ export default function Experience({
           {/* Filling Timeline Bar */}
           <motion.div
             style={{ scaleY, originY: 0 }}
-            className="absolute h-full w-1 bg-blue-500"
+            className="absolute h-full w-1 bg-blue-500 shadow-[0px_0px_10px_rgba(59,130,246,0.6)]"
           />
         </div>
 
@@ -59,6 +60,7 @@ export default function Experience({
                 variants={bulletAnimation}
                 initial="initial"
                 animate="animate"
+                viewport={{ once: true, amount: 0.2 }}
                 className="absolute -left-14 top-8 h-4 w-4 rounded-full sm:-left-[72px] xl:-left-[104px]"
               />
               <ExperienceCard

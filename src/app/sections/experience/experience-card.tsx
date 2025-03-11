@@ -20,7 +20,7 @@ export const ExperienceCard = ({
   description,
 }: ExperienceCardProps) => {
   const ref = useRef(null);
-  const isInView = useInView(ref);
+  const isInView = useInView(ref, { amount: 0.2, once: true });
 
   return (
     <motion.div
@@ -28,7 +28,7 @@ export const ExperienceCard = ({
       className="rounded-lg bg-white p-6 shadow-md"
       initial={{ opacity: 0, x: -50 }}
       animate={{ opacity: isInView ? 1 : 0, x: isInView ? 0 : -50 }}
-      transition={{ duration: 0.5, ease: "easeOut" }}
+      transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.2 }}
     >
       <h2 className="text-2xl font-bold text-zinc-900">{title}</h2>
       <p className="text-sm font-semibold text-zinc-900 sm:text-base">
