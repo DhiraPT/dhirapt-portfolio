@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import Image from "next/image";
 import { FiArrowUpRight } from "react-icons/fi";
 
@@ -30,7 +31,13 @@ export const ProjectCard = ({
   };
 
   return (
-    <div className="group/project-card relative overflow-hidden rounded-lg shadow-lg transition-all duration-300 ease-in-out hover:shadow-xl">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      className="group/project-card relative overflow-hidden rounded-lg shadow-lg transition-all duration-300 ease-in-out hover:shadow-xl"
+    >
       <div className="relative aspect-square overflow-hidden">
         {coverMediaUrl ? (
           <Image
@@ -52,14 +59,16 @@ export const ProjectCard = ({
         </h2>
         {/* <p className="font-semibold mb-2 opacity-0 transform translate-y-2 transition-all duration-300 ease-in-out group-hover/project-card:opacity-100 group-hover/project-card:translate-y-0">{date}</p>
         <p className="mb-4 opacity-0 transform translate-y-2 transition-all duration-300 ease-in-out group-hover/project-card:opacity-100 group-hover/project-card:translate-y-0">{description}</p> */}
-        <span
+        <motion.span
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
           className="inline-flex translate-y-2 transform cursor-pointer items-center rounded-full bg-blue-600 px-4 py-2 text-white opacity-0 transition-all duration-300 ease-in-out hover:bg-blue-700 group-hover/project-card:translate-y-0 group-hover/project-card:opacity-100"
           onClick={onViewDetailsClick}
         >
           View Details
           <FiArrowUpRight className="ml-1" size={22} />
-        </span>
+        </motion.span>
       </div>
-    </div>
+    </motion.div>
   );
 };

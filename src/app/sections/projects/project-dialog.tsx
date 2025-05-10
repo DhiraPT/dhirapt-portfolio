@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 import Image from "next/image";
 import {
   Dialog,
@@ -10,6 +10,7 @@ import {
 import Link from "next/link";
 import { FiArrowUpRight } from "react-icons/fi";
 import { AiOutlineClose } from "react-icons/ai";
+import { motion } from "framer-motion";
 
 interface ProjectDialogProps {
   title: string;
@@ -30,6 +31,7 @@ export const ProjectDialog = ({
   isModalOpen,
   setIsModalOpen,
 }: ProjectDialogProps) => {
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
   const isImage = mediaUrl.endsWith(".png") || mediaUrl.endsWith(".jpg");
   return (
     <Transition appear show={isModalOpen} as={Fragment}>
@@ -65,31 +67,53 @@ export const ProjectDialog = ({
                 <DialogTitle className="text-2xl font-semibold leading-6 text-gray-900">
                   {title}
                 </DialogTitle>
+
                 <p className="mt-2 text-sm text-gray-500 sm:text-base">
                   {date}
                 </p>
+
                 <div className="mt-4">
                   <div className="max-w-screen relative w-full overflow-hidden rounded-md">
                     {isImage ? (
-                      <Image
-                        src={mediaUrl}
-                        alt={title}
-                        width={1920}
-                        height={1080}
-                        className="object-contain"
-                      />
+                      <>
+                        {!isImageLoaded && (
+                          <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
+                            <div className="h-8 w-8 animate-spin rounded-full border-b-2 border-blue-500"></div>
+                          </div>
+                        )}
+                        <Image
+                          src={mediaUrl}
+                          alt={title}
+                          width={1920}
+                          height={1080}
+                          className={`h-auto w-full object-contain transition-opacity duration-300 ${isImageLoaded ? "opacity-100" : "opacity-0"}`}
+                          onLoad={() => setIsImageLoaded(true)}
+                        />
+                      </>
                     ) : (
-                      <video className="h-auto w-full" controls>
+                      <video className="h-auto w-full" controls autoPlay>
                         <source src={mediaUrl} type="video/mp4" />
                         Your browser does not support the video tag.
                       </video>
                     )}
                   </div>
                 </div>
-                <p className="mt-4 text-sm text-gray-500 sm:text-base">
+
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2 }}
+                  className="mt-4 text-sm sm:text-base"
+                >
                   {description}
-                </p>
-                <div className="mt-6">
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.4 }}
+                  className="mt-6 flex gap-3"
+                >
                   <Link
                     href={link}
                     target="_blank"
@@ -99,7 +123,8 @@ export const ProjectDialog = ({
                     View Project
                     <FiArrowUpRight className="ml-1" size={22} />
                   </Link>
-                </div>
+                </motion.div>
+
                 <button
                   type="button"
                   className="absolute right-4 top-4 text-gray-400 hover:text-gray-500"

@@ -5,6 +5,7 @@ import { ExperienceCard } from "./experience-card";
 import { formatDate } from "@/utils/date";
 import { motion, useScroll, useSpring } from "framer-motion";
 import { Database } from "@/types/supabase";
+import { SectionHeading } from "@/app/components/section-heading";
 
 type Experience = Database["public"]["Tables"]["Experiences"]["Row"];
 
@@ -36,9 +37,7 @@ export default function Experience({
       id="experience"
       className="flex flex-col items-center justify-between px-12 pt-20 sm:px-16 xl:px-24"
     >
-      <h2 className="mb-8 mt-4 text-center text-4xl font-extrabold">
-        My Experience
-      </h2>
+      <SectionHeading>My Experience</SectionHeading>
       <div className="relative flex w-full flex-col space-y-12 sm:flex-row sm:space-x-16 xl:space-x-24">
         {/* Container for Timeline Bar and Bullet Points */}
         <div className="relative flex flex-col items-center">

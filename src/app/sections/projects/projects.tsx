@@ -5,6 +5,7 @@ import { ProjectCard } from "./project-card";
 import { formatDate } from "@/utils/date";
 import { Database } from "@/types/supabase";
 import { ProjectDialog } from "./project-dialog";
+import { SectionHeading } from "@/app/components/section-heading";
 
 type Project = Database["public"]["Tables"]["Projects"]["Row"];
 
@@ -29,9 +30,7 @@ export default function Projects({ projects }: { projects: Project[] | null }) {
       id="projects"
       className="flex w-full flex-col items-center justify-between px-12 pt-20 sm:px-16 xl:px-24"
     >
-      <h2 className="mb-8 mt-4 text-center text-4xl font-extrabold">
-        My Projects
-      </h2>
+      <SectionHeading>My Projects</SectionHeading>
       <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
         {projects?.map((project, index) => (
           <ProjectCard
