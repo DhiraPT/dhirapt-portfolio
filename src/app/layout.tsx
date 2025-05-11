@@ -1,13 +1,21 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { Links } from "./components/links";
-import { ContactBar } from "./components/contact-bar";
-import { Analytics } from "@vercel/analytics/react";
-import ThemeSwitcher from "./components/theme-switcher";
 import ThemeProvider from "./theme-provider";
+import { Links } from "./components/links";
+import ThemeSwitcher from "./components/theme-switcher";
+import { ContactBar } from "./components/contact-bar";
+import { Analytics } from "@vercel/analytics/next";
 
-const inter = Inter({ subsets: ["latin"] });
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Dhiraputta Pathama Tengara",
@@ -16,19 +24,21 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body
-        className={
-          inter.className +
-          " flex min-h-screen flex-col bg-white dark:bg-zinc-900"
-        }
+        className={`${geistSans.variable} ${geistMono.variable} flex min-h-screen flex-col bg-white antialiased dark:bg-zinc-900`}
       >
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <div className="fixed left-0 top-0 z-50 flex w-full flex-row items-center justify-between bg-white px-4 dark:bg-zinc-900 sm:px-8 xl:px-12">
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <div className="fixed top-0 left-0 z-50 flex w-full flex-row items-center justify-between bg-white px-4 sm:px-8 xl:px-12 dark:bg-zinc-900">
             <Links />
             <ThemeSwitcher />
           </div>

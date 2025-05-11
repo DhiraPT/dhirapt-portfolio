@@ -49,7 +49,7 @@ export const ProjectDialog = ({
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <div className="fixed inset-0 bg-black bg-opacity-25" />
+          <div className="fixed inset-0 bg-black/25" />
         </TransitionChild>
 
         <div className="fixed inset-0 overflow-y-auto">
@@ -64,7 +64,7 @@ export const ProjectDialog = ({
               leaveTo="opacity-0 scale-95"
             >
               <DialogPanel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
-                <DialogTitle className="text-2xl font-semibold leading-6 text-gray-900">
+                <DialogTitle className="text-2xl leading-6 font-semibold text-gray-900">
                   {title}
                 </DialogTitle>
 
@@ -73,7 +73,7 @@ export const ProjectDialog = ({
                 </p>
 
                 <div className="mt-4">
-                  <div className="max-w-screen relative w-full overflow-hidden rounded-md">
+                  <div className="relative w-full max-w-screen overflow-hidden rounded-md">
                     {isImage ? (
                       <>
                         {!isImageLoaded && (
@@ -127,7 +127,7 @@ export const ProjectDialog = ({
 
                 <button
                   type="button"
-                  className="absolute right-4 top-4 text-gray-400 hover:text-gray-500"
+                  className="absolute top-4 right-4 text-gray-400 hover:text-gray-500"
                   onClick={() => setIsModalOpen(false)}
                 >
                   <AiOutlineClose size={24} aria-hidden="true" />

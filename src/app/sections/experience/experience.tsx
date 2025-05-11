@@ -60,7 +60,7 @@ export default function Experience({
                 initial="initial"
                 animate="animate"
                 viewport={{ once: true, amount: 0.2 }}
-                className="absolute -left-14 top-8 h-4 w-4 rounded-full sm:-left-[72px] xl:-left-[104px]"
+                className="absolute top-8 -left-14 h-4 w-4 rounded-full sm:-left-[72px] xl:-left-[104px]"
               />
               <ExperienceCard
                 key={experience.id}
@@ -82,7 +82,7 @@ export default function Experience({
               variants={bulletAnimation}
               initial="initial"
               animate="animate"
-              className="absolute -left-14 top-8 h-4 w-4 rounded-full sm:-left-[72px] xl:-left-[104px]"
+              className="absolute top-8 -left-14 h-4 w-4 rounded-full sm:-left-[72px] xl:-left-[104px]"
             />
             <div className="rounded-lg bg-white p-6 shadow-md">
               <h2 className="text-2xl font-bold text-zinc-900">

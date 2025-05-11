@@ -8,7 +8,7 @@ import Link from "next/link";
 
 export const ContactBar = () => {
   return (
-    <div className="fixed bottom-0 right-0 pb-2 pr-2">
+    <div className="fixed right-0 bottom-0 pr-2 pb-2">
       <IconContext.Provider value={{ size: "40" }}>
         <div className="flex flex-col items-center space-y-3">
           <Link href="mailto:dhira.pt@gmail.com" target="_blank" rel="noopener">

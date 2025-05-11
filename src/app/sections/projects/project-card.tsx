@@ -51,7 +51,7 @@ export const ProjectCard = ({
             No image available
           </div>
         )}
-        <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 transition-opacity duration-300 group-hover/project-card:opacity-100" />
+        <div className="absolute inset-0 bg-black/50 opacity-0 transition-opacity duration-300 group-hover/project-card:opacity-100" />
       </div>
       <div className="absolute inset-0 flex flex-col justify-end p-4 text-white">
         <h2 className="mb-1 transform text-2xl font-bold opacity-0 transition-all duration-300 ease-in-out group-hover/project-card:-translate-y-1 group-hover/project-card:opacity-100">
@@ -62,7 +62,7 @@ export const ProjectCard = ({
         <motion.span
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="inline-flex translate-y-2 transform cursor-pointer items-center rounded-full bg-blue-600 px-4 py-2 text-white opacity-0 transition-all duration-300 ease-in-out hover:bg-blue-700 group-hover/project-card:translate-y-0 group-hover/project-card:opacity-100"
+          className="inline-flex translate-y-2 transform cursor-pointer items-center rounded-full bg-blue-600 px-4 py-2 text-white opacity-0 transition-all duration-300 ease-in-out group-hover/project-card:translate-y-0 group-hover/project-card:opacity-100 hover:bg-blue-700"
           onClick={onViewDetailsClick}
         >
           View Details

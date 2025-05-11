@@ -7,7 +7,7 @@ export const SectionHeading = ({ children }: { children: React.ReactNode }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.6 }}
-      className="mb-8 mt-4 text-center text-4xl font-extrabold"
+      className="mt-4 mb-8 text-center text-4xl font-extrabold"
     >
       {children}
     </motion.h2>

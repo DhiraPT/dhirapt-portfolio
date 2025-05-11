@@ -26,7 +26,7 @@ export const ExperienceCard = ({
   return (
     <motion.div
       ref={ref}
-      className="rounded-xl border border-gray-100 bg-white p-4 shadow-lg transition-shadow duration-300 hover:shadow-xl dark:border-gray-700 sm:p-6"
+      className="rounded-xl border border-gray-100 bg-white p-4 shadow-lg transition-shadow duration-300 hover:shadow-xl sm:p-6 dark:border-gray-700"
       initial={{ opacity: 0, x: -50 }}
       animate={{ opacity: isInView ? 1 : 0, x: isInView ? 0 : -50 }}
       transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.2 }}
@@ -47,7 +47,7 @@ export const ExperienceCard = ({
       </div>
 
       <ul className="mt-4 space-y-2">
-        {description.map((desc: String, index) => (
+        {description.map((desc: string, index) => (
           <motion.li
             key={index}
             initial={{ opacity: 0, x: -10 }}
@@ -55,7 +55,7 @@ export const ExperienceCard = ({
             transition={{ delay: 0.3 + index * 0.1 }}
             className="flex items-start text-sm text-zinc-900 sm:text-base"
           >
-            <span className="mr-2 mt-2 inline-block h-1.5 w-1.5 flex-shrink-0 rounded-full bg-blue-500"></span>
+            <span className="mt-2 mr-2 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-blue-500"></span>
             {desc}
           </motion.li>
         ))}
