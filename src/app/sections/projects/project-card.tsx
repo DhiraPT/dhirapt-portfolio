@@ -17,11 +17,7 @@ interface ProjectCardProps {
 export const ProjectCard = ({
   index,
   title,
-  date,
-  description,
   coverMediaUrl,
-  link,
-  isModalOpen,
   setIsModalOpen,
   setSelectedProjectIndex,
 }: ProjectCardProps) => {
