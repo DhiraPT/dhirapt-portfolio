@@ -30,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} flex min-h-screen flex-col bg-white antialiased dark:bg-zinc-900`}
+        className={`${geistSans.variable} ${geistMono.variable} flex min-h-screen flex-col bg-slate-50 antialiased dark:bg-slate-950`}
       >
         <ThemeProvider
           attribute="class"
@@ -38,7 +38,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="fixed top-0 left-0 z-50 flex w-full flex-row items-center justify-between bg-white px-4 sm:px-8 xl:px-12 dark:bg-zinc-900">
+          <div className="fixed top-0 left-0 z-50 flex w-full flex-row items-center justify-between bg-slate-50 px-4 sm:px-8 xl:px-12 dark:bg-slate-950">
             <Links />
             <ThemeSwitcher />
           </div>

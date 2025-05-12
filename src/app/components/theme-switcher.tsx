@@ -21,19 +21,23 @@ const ThemeSwitcher = () => {
     <Switch
       checked={theme === "dark"}
       onChange={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className={`${theme === "dark" ? "bg-white" : "bg-zinc-900"} relative inline-flex h-8 w-16 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75`}
+      className={`${theme === "dark" ? "bg-slate-800" : "bg-slate-200"} relative inline-flex h-8 w-16 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-300/50`}
     >
       <IconContext.Provider value={{ size: "40" }}>
         <div className="absolute inset-0 flex items-center justify-center">
-          <IoMoon style={{ color: "#18181B" }} />
-          <IoSunny style={{ color: "#efe00b" }} />
+          <IoMoon
+            className={`${theme === "dark" ? "opacity-100" : "opacity-0"} text-indigo-300`}
+          />
+          <IoSunny
+            className={`${theme === "light" ? "opacity-100" : "opacity-0"} text-amber-500`}
+          />
         </div>
       </IconContext.Provider>
       <span
         aria-hidden="true"
         className={`${
           theme === "dark"
-            ? "translate-x-8 bg-zinc-900"
+            ? "translate-x-8 bg-slate-900"
             : "translate-x-0 bg-white"
         } pointer-events-none inline-block h-7 w-7 transform rounded-full shadow-lg ring-0 transition duration-200 ease-in-out`}
       />
