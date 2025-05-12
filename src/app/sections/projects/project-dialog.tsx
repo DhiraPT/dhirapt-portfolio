@@ -49,7 +49,7 @@ export const ProjectDialog = ({
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <div className="fixed inset-0 bg-black/25" />
+          <div className="fixed inset-0 bg-black/40 dark:bg-slate-950/40" />
         </TransitionChild>
 
         <div className="fixed inset-0 overflow-y-auto">
@@ -63,12 +63,12 @@ export const ProjectDialog = ({
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <DialogPanel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
-                <DialogTitle className="text-2xl leading-6 font-semibold text-gray-900">
+              <DialogPanel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-slate-50 p-6 text-left align-middle shadow-md transition-all dark:bg-slate-900 dark:shadow-slate-800">
+                <DialogTitle className="text-2xl leading-6 font-semibold">
                   {title}
                 </DialogTitle>
 
-                <p className="mt-2 text-sm text-gray-500 sm:text-base">
+                <p className="mt-2 text-sm text-slate-600 sm:text-base dark:text-slate-400">
                   {date}
                 </p>
 
@@ -77,8 +77,8 @@ export const ProjectDialog = ({
                     {isImage ? (
                       <>
                         {!isImageLoaded && (
-                          <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
-                            <div className="h-8 w-8 animate-spin rounded-full border-b-2 border-blue-500"></div>
+                          <div className="absolute inset-0 flex items-center justify-center bg-slate-200 dark:bg-slate-800">
+                            <div className="h-8 w-8 animate-spin rounded-full border-b-2 border-indigo-600 dark:border-indigo-300"></div>
                           </div>
                         )}
                         <Image
@@ -103,7 +103,7 @@ export const ProjectDialog = ({
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2 }}
-                  className="mt-4 text-sm text-gray-900 sm:text-base"
+                  className="mt-4 text-sm sm:text-base"
                 >
                   {description}
                 </motion.div>
@@ -116,9 +116,10 @@ export const ProjectDialog = ({
                 >
                   <Link
                     href={link}
+                    aria-label={`View ${title} project`}
                     target="_blank"
                     rel="noopener"
-                    className="inline-flex items-center justify-center rounded-full bg-blue-600 px-4 py-2 text-white hover:bg-blue-700"
+                    className="inline-flex items-center justify-center rounded-full bg-indigo-600 px-4 py-2 text-slate-100 hover:bg-indigo-700"
                   >
                     View Project
                     <FiArrowUpRight className="ml-1" size={22} />
@@ -127,7 +128,8 @@ export const ProjectDialog = ({
 
                 <button
                   type="button"
-                  className="absolute top-4 right-4 text-gray-400 hover:text-gray-500"
+                  aria-label="Close dialog"
+                  className="absolute top-4 right-4 text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-300"
                   onClick={() => setIsModalOpen(false)}
                 >
                   <AiOutlineClose size={24} aria-hidden="true" />

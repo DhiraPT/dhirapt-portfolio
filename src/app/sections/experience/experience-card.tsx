@@ -33,13 +33,9 @@ export const ExperienceCard = ({
     >
       <div className="flex items-start justify-between">
         <div>
-          <h2 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
-            {title}
-          </h2>
-          <p className="text-sm font-semibold text-slate-900 sm:text-base dark:text-slate-100">
-            {company}
-          </p>
-          <p className="text-sm font-semibold text-slate-900 sm:text-base dark:text-slate-100">
+          <h2 className="text-2xl font-bold">{title}</h2>
+          <p className="text-sm font-semibold">{company}</p>
+          <p className="text-sm font-semibold">
             {startDate} - {endDate}
           </p>
         </div>
@@ -55,7 +51,7 @@ export const ExperienceCard = ({
             initial={{ opacity: 0, x: -10 }}
             animate={{ opacity: isInView ? 1 : 0, x: isInView ? 0 : -10 }}
             transition={{ delay: 0.3 + index * 0.1 }}
-            className="flex items-start text-sm text-slate-900 sm:text-base dark:text-slate-100"
+            className="flex items-start text-sm sm:text-base"
           >
             <span className="mt-2 mr-2 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-indigo-600 dark:bg-indigo-300"></span>
             {desc}

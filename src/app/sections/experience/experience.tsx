@@ -16,7 +16,6 @@ export default function Experience({
   experiences: Experience[] | null;
 }) {
   const ref = useRef(null);
-
   const [mounted, setMounted] = useState(false);
   const { theme } = useTheme();
 
@@ -109,7 +108,7 @@ export default function Experience({
               className="absolute top-8 -left-14 h-4 w-4 rounded-full sm:-left-[72px] xl:-left-[104px]"
             />
             <div className="rounded-lg border border-slate-200 bg-slate-50 p-6 shadow-md transition-shadow duration-300 hover:shadow-lg dark:border-slate-700 dark:bg-slate-900 dark:shadow-slate-800 dark:hover:shadow-slate-700">
-              <h2 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
+              <h2 className="text-2xl font-bold">
                 Could be your company :&#41;
               </h2>
             </div>

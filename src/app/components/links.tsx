@@ -8,7 +8,7 @@ export const Links = () => {
 
   return (
     <nav className="py-8">
-      <ul className="flex flex-row space-x-4 font-semibold text-zinc-900 dark:text-white">
+      <ul className="flex flex-row space-x-4 font-semibold text-slate-900 dark:text-slate-100">
         <li>
           <Link className={`link ${pathname === "/" ? "active" : ""}`} href="/">
             Home
