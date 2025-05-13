@@ -8,15 +8,29 @@ export const Links = () => {
 
   return (
     <nav className="py-8">
-      <ul className="flex flex-row space-x-4 font-semibold text-slate-900 dark:text-slate-100">
+      <ul
+        className={`
+          flex flex-row space-x-4 font-semibold text-slate-900
+          dark:text-slate-100
+        `}
+      >
         <li>
-          <Link className={`link ${pathname === "/" ? "active" : ""}`} href="/">
+          <Link
+            className={`
+              link
+              ${pathname === "/" ? "active" : ""}
+            `}
+            href="/"
+          >
             Home
           </Link>
         </li>
         <li>
           <Link
-            className={`link ${pathname === "/#experience" ? "active" : ""}`}
+            className={`
+              link
+              ${pathname === "/#experience" ? "active" : ""}
+            `}
             href="#experience"
           >
             Experience
@@ -24,7 +38,10 @@ export const Links = () => {
         </li>
         <li>
           <Link
-            className={`link ${pathname === "/#projects" ? "active" : ""}`}
+            className={`
+              link
+              ${pathname === "/#projects" ? "active" : ""}
+            `}
             href="#projects"
           >
             Projects

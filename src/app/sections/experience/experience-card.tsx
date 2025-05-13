@@ -26,7 +26,12 @@ export const ExperienceCard = ({
   return (
     <motion.div
       ref={ref}
-      className="rounded-xl border border-slate-200 bg-slate-50 p-4 shadow-md transition-shadow duration-300 hover:shadow-lg sm:p-6 dark:border-slate-700 dark:bg-slate-900 dark:shadow-slate-800 dark:hover:shadow-slate-700"
+      className={`
+        rounded-xl border border-slate-200 bg-slate-50 p-4 shadow-md transition-shadow duration-300
+        hover:shadow-lg
+        sm:p-6
+        dark:border-slate-700 dark:bg-slate-900 dark:shadow-slate-800 dark:hover:shadow-slate-700
+      `}
       initial={{ opacity: 0, x: -50 }}
       animate={{ opacity: isInView ? 1 : 0, x: isInView ? 0 : -50 }}
       transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.2 }}
@@ -39,7 +44,13 @@ export const ExperienceCard = ({
             {startDate} - {endDate}
           </p>
         </div>
-        <button className="text-indigo-600 transition-colors hover:text-indigo-800 dark:text-indigo-300 dark:hover:text-indigo-400">
+        <button
+          className={`
+            text-indigo-600 transition-colors
+            hover:text-indigo-800
+            dark:text-indigo-300 dark:hover:text-indigo-400
+          `}
+        >
           <FiExternalLink size={20} />
         </button>
       </div>
@@ -51,9 +62,17 @@ export const ExperienceCard = ({
             initial={{ opacity: 0, x: -10 }}
             animate={{ opacity: isInView ? 1 : 0, x: isInView ? 0 : -10 }}
             transition={{ delay: 0.3 + index * 0.1 }}
-            className="flex items-start text-sm sm:text-base"
+            className={`
+              flex items-start text-sm
+              sm:text-base
+            `}
           >
-            <span className="mt-2 mr-2 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-indigo-600 dark:bg-indigo-300"></span>
+            <span
+              className={`
+                mt-2 mr-2 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-indigo-600
+                dark:bg-indigo-300
+              `}
+            ></span>
             {desc}
           </motion.li>
         ))}

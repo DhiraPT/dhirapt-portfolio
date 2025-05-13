@@ -28,10 +28,21 @@ export default function Projects({ projects }: { projects: Project[] | null }) {
   return (
     <section
       id="projects"
-      className="flex w-full flex-col items-center justify-between px-12 pt-20 sm:px-16 xl:px-24"
+      className={`
+        flex w-full flex-col items-center justify-between px-12 pt-20
+        sm:px-16
+        xl:px-24
+      `}
     >
       <SectionHeading>My Projects</SectionHeading>
-      <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
+      <div
+        className={`
+          grid w-full grid-cols-1 gap-4
+          sm:grid-cols-2
+          md:grid-cols-3
+          xl:grid-cols-4 xl:gap-x-8
+        `}
+      >
         {projects?.map((project, index) => (
           <ProjectCard
             key={project.id}
