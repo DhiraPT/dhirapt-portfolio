@@ -8,10 +8,17 @@ import { IconContext } from "react-icons";
 const ThemeSwitcher = () => {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
+  const [enabled, setEnabled] = useState(theme === "dark");
 
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  useEffect(() => {
+    if (mounted) {
+      setTheme(enabled ? "dark" : "light");
+    }
+  }, [enabled, mounted, setTheme]);
 
   if (!mounted) {
     return null;
@@ -19,27 +26,19 @@ const ThemeSwitcher = () => {
 
   return (
     <Switch
-      checked={theme === "dark"}
-      onChange={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className={`${theme === "dark" ? "bg-slate-800" : "bg-slate-200"} relative inline-flex h-8 w-16 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-300/50`}
+      checked={enabled}
+      onChange={setEnabled}
+      className="group relative inline-flex h-8 w-16 shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-slate-200 transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-300/50 data-checked:bg-slate-800"
     >
       <IconContext.Provider value={{ size: "40" }}>
         <div className="absolute inset-0 flex items-center justify-center">
-          <IoMoon
-            className={`${theme === "dark" ? "opacity-100" : "opacity-0"} text-indigo-300`}
-          />
-          <IoSunny
-            className={`${theme === "light" ? "opacity-100" : "opacity-0"} text-amber-500`}
-          />
+          <IoMoon className="text-indigo-300 opacity-0 group-data-checked:opacity-100" />
+          <IoSunny className="text-amber-400 opacity-100 group-data-checked:opacity-0" />
         </div>
       </IconContext.Provider>
       <span
         aria-hidden="true"
-        className={`${
-          theme === "dark"
-            ? "translate-x-8 bg-slate-900"
-            : "translate-x-0 bg-white"
-        } pointer-events-none inline-block h-7 w-7 transform rounded-full shadow-lg ring-0 transition duration-200 ease-in-out`}
+        className="pointer-events-none inline-block h-7 w-7 translate-x-0 transform rounded-full bg-white shadow-lg ring-0 transition duration-200 ease-in-out group-data-checked:translate-x-8 group-data-checked:bg-slate-900"
       />
     </Switch>
   );
