@@ -14,7 +14,7 @@ export default function Home() {
       ref={ref}
       id="home"
       className={`
-        flex min-h-dvh flex-col items-center justify-center space-y-4 px-12 pt-20
+        relative flex min-h-dvh flex-col items-center justify-center space-y-4 px-12 pt-20
         sm:px-16
         xl:px-24
       `}

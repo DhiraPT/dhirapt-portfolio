@@ -70,8 +70,8 @@ export const ProjectDialog = ({
             >
               <DialogPanel
                 className={`
-                  w-full max-w-md transform overflow-hidden rounded-2xl bg-slate-50 p-6 text-left align-middle shadow-md
-                  transition-all
+                  relative w-full max-w-md transform overflow-hidden rounded-2xl bg-slate-50 p-6 text-left align-middle
+                  shadow-md transition-all
                   dark:bg-slate-900 dark:shadow-slate-800
                 `}
               >
@@ -166,7 +166,7 @@ export const ProjectDialog = ({
                   type="button"
                   aria-label="Close dialog"
                   className={`
-                    absolute top-4 right-4 text-slate-500
+                    absolute top-4 right-4 cursor-pointer text-slate-500
                     hover:text-slate-700
                     dark:text-slate-400 dark:hover:text-slate-300
                   `}
