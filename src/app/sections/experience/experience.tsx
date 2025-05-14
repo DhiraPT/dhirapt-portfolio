@@ -63,8 +63,8 @@ export default function Experience({
       <SectionHeading>My Experience</SectionHeading>
       <div
         className={`
-          relative flex w-full flex-col space-y-12
-          sm:flex-row sm:space-x-16
+          relative flex w-full flex-row space-x-12
+          sm:space-x-16
           xl:space-x-24
         `}
       >

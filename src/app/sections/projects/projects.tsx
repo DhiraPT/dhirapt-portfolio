@@ -37,10 +37,10 @@ export default function Projects({ projects }: { projects: Project[] | null }) {
       <SectionHeading>My Projects</SectionHeading>
       <div
         className={`
-          grid w-full grid-cols-1 gap-4
+          grid w-full grid-cols-1 gap-6
           sm:grid-cols-2
           md:grid-cols-3
-          xl:grid-cols-4 xl:gap-x-8
+          xl:grid-cols-4
         `}
       >
         {projects?.map((project, index) => (
