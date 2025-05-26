@@ -47,6 +47,17 @@ export const Links = () => {
             Projects
           </Link>
         </li>
+        <li>
+          <Link
+            className={`
+              link
+              ${pathname === "/#oss-contributions" ? "active" : ""}
+            `}
+            href="#oss-contributions"
+          >
+            Open Source
+          </Link>
+        </li>
       </ul>
     </nav>
   );

@@ -2,6 +2,7 @@ import { supabase } from "@/utils/supabase";
 import Home from "./sections/home/home";
 import Experience from "./sections/experience/experience";
 import Projects from "./sections/projects/projects";
+import OSSContributions from "./sections/oss-contributions/oss-contributions";
 
 export const revalidate = 3600; // Invalidate cache every hour
 
@@ -26,6 +27,7 @@ export default async function Page() {
       <Home />
       <Experience experiences={experiences} />
       <Projects projects={projects} />
+      <OSSContributions />
     </main>
   );
 }

@@ -45,8 +45,7 @@ export default function RootLayout({
         >
           <div
             className={`
-              fixed top-0 left-0 z-50 flex w-full flex-row items-center justify-between bg-slate-50 px-4
-              sm:px-8
+              fixed top-0 left-0 z-50 flex w-full flex-row items-center justify-between bg-slate-50 px-8
               xl:px-12
               dark:bg-slate-950
             `}
