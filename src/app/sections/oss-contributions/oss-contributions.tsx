@@ -287,8 +287,25 @@ export default function OSSContributions() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, delay: 0.2 }}
-        className={`w-full max-w-6xl overflow-hidden`}
+        className={`relative w-full max-w-6xl overflow-hidden`}
       >
+        {/* Loading Overlay */}
+        {loading && (
+          <div
+            className={`
+              absolute inset-0 z-10 flex items-center justify-center bg-white/50
+              dark:bg-slate-800/50
+            `}
+          >
+            <div
+              className={`
+                h-8 w-8 animate-spin rounded-full border-4 border-indigo-600 border-t-transparent
+                dark:border-indigo-400
+              `}
+            />
+          </div>
+        )}
+
         <table className="w-full table-fixed border-collapse">
           <thead>
             {table.getHeaderGroups().map((headerGroup) => (
@@ -351,18 +368,7 @@ export default function OSSContributions() {
             ))}
           </thead>
           <tbody>
-            {loading ? (
-              <tr>
-                <td colSpan={columns.length} className="py-8 text-center">
-                  <div
-                    className={`
-                      mx-auto h-8 w-8 animate-spin rounded-full border-4 border-indigo-600 border-t-transparent
-                      dark:border-indigo-400
-                    `}
-                  ></div>
-                </td>
-              </tr>
-            ) : contributions.length === 0 ? (
+            {contributions.length === 0 ? (
               <tr>
                 <td
                   colSpan={columns.length}
@@ -392,7 +398,7 @@ export default function OSSContributions() {
                         sm:text-sm
                         dark:text-slate-100
                         ${
-                          cell.id === "date"
+                          cell.id.includes("date")
                             ? `
                               w-[93.11px] whitespace-nowrap
                               sm:w-[103.3px]
@@ -400,7 +406,7 @@ export default function OSSContributions() {
                             : ""
                         }
                         ${
-                          cell.id === "project_name"
+                          cell.id.includes("project_name")
                             ? `
                               w-28
                               md:w-36
@@ -408,7 +414,7 @@ export default function OSSContributions() {
                             : ""
                         }
                         ${
-                          cell.id === "title"
+                          cell.id.includes("title")
                             ? `
                               w-[calc(100%-93.11px-112px-128px)]
                               sm:w-[calc(100%-103.3px-112px-128px)]
@@ -417,7 +423,7 @@ export default function OSSContributions() {
                             : ""
                         }
                         ${
-                          cell.id === "type"
+                          cell.id.includes("type")
                             ? `
                               w-32
                               md:w-[170px]
