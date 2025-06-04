@@ -6,6 +6,7 @@ import { Links } from "./components/links";
 import ThemeSwitcher from "./components/theme-switcher";
 import { ContactBar } from "./components/contact-bar";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -56,6 +57,7 @@ export default function RootLayout({
           {children}
           <ContactBar />
           <Analytics />
+          <SpeedInsights />
         </ThemeProvider>
       </body>
     </html>
