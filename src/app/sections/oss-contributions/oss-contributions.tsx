@@ -287,7 +287,7 @@ export default function OSSContributions() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, delay: 0.2 }}
-        className={`relative w-full max-w-6xl overflow-hidden`}
+        className={`relative w-full max-w-6xl overflow-x-auto`}
       >
         {/* Loading Overlay */}
         {loading && (
@@ -306,7 +306,7 @@ export default function OSSContributions() {
           </div>
         )}
 
-        <table className="w-full table-fixed border-collapse">
+        <table className="w-full table-fixed border-collapse min-w-[480px]">
           <thead>
             {table.getHeaderGroups().map((headerGroup) => (
               <tr
@@ -320,14 +320,14 @@ export default function OSSContributions() {
                   <th
                     key={header.id}
                     className={`
-                      px-4 py-3 text-left text-xs font-semibold wrap-break-word text-slate-900
-                      sm:text-sm
+                      px-2 py-2 text-left text-xs font-semibold wrap-break-word text-slate-900
+                      sm:px-3 sm:py-2 sm:text-sm
                       dark:text-slate-100
                       ${
                         header.id === "date"
                           ? `
-                            w-[93.11px] whitespace-nowrap
-                            sm:w-[103.3px]
+                            w-[80px] whitespace-nowrap
+                            sm:w-[100px]
                           `
                           : ""
                       }
@@ -342,17 +342,17 @@ export default function OSSContributions() {
                       ${
                         header.id === "title"
                           ? `
-                            w-[calc(100%-93.11px-112px-128px)]
-                            sm:w-[calc(100%-103.3px-112px-128px)]
-                            md:w-[calc(100%-103.3px-144px-170px)]
+                            w-[calc(100%-80px-112px-112px)]
+                            sm:w-[calc(100%-100px-112px-112px)]
+                            md:w-[calc(100%-100px-144px-144px)]
                           `
                           : ""
                       }
                       ${
                         header.id === "type"
                           ? `
-                            w-32
-                            md:w-[170px]
+                            w-28
+                            md:w-36
                           `
                           : ""
                       }
@@ -394,14 +394,14 @@ export default function OSSContributions() {
                     <td
                       key={cell.id}
                       className={`
-                        px-4 py-3 text-xs wrap-break-word text-slate-900
-                        sm:text-sm
+                        px-2 py-1 text-xs wrap-break-word text-slate-900
+                        sm:px-3 sm:py-2 sm:text-sm
                         dark:text-slate-100
                         ${
                           cell.id.includes("date")
                             ? `
-                              w-[93.11px] whitespace-nowrap
-                              sm:w-[103.3px]
+                              w-[80px] whitespace-nowrap
+                              sm:w-[100px]
                             `
                             : ""
                         }
@@ -416,17 +416,17 @@ export default function OSSContributions() {
                         ${
                           cell.id.includes("title")
                             ? `
-                              w-[calc(100%-93.11px-112px-128px)]
-                              sm:w-[calc(100%-103.3px-112px-128px)]
-                              md:w-[calc(100%-103.3px-144px-170px)]
+                              w-[calc(100%-80px-112px-112px)]
+                              sm:w-[calc(100%-100px-112px-112px)]
+                              md:w-[calc(100%-100px-144px-144px)]
                             `
                             : ""
                         }
                         ${
                           cell.id.includes("type")
                             ? `
-                              w-32
-                              md:w-[170px]
+                              w-28
+                              md:w-36
                             `
                             : ""
                         }
