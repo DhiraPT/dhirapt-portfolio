@@ -306,7 +306,7 @@ export default function OSSContributions() {
           </div>
         )}
 
-        <table className="w-full table-fixed border-collapse min-w-[480px]">
+        <table className="w-full min-w-[480px] table-fixed border-collapse">
           <thead>
             {table.getHeaderGroups().map((headerGroup) => (
               <tr

@@ -2,7 +2,7 @@ import { dirname } from "path";
 import { fileURLToPath } from "url";
 import { FlatCompat } from "@eslint/eslintrc";
 import eslintParserTypeScript from "@typescript-eslint/parser";
-import eslintPluginReadableTailwind from "eslint-plugin-readable-tailwind";
+import eslintPluginBetterTailwindcss from "eslint-plugin-better-tailwindcss";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -13,7 +13,7 @@ const compat = new FlatCompat({
 
 const eslintConfig = [
   {
-    ignores: ["**/types/supabase.ts"],
+    ignores: ["**/types/database.types.ts"],
   },
   ...compat.extends("next/core-web-vitals", "next/typescript"),
   {
@@ -35,15 +35,15 @@ const eslintConfig = [
       },
     },
     plugins: {
-      "readable-tailwind": eslintPluginReadableTailwind,
+      "better-tailwindcss": eslintPluginBetterTailwindcss,
     },
     rules: {
-      ...eslintPluginReadableTailwind.configs.warning.rules,
-      "readable-tailwind/multiline": ["warn", { printWidth: 120 }],
+      ...eslintPluginBetterTailwindcss.configs["recommended-warn"].rules,
+      "better-tailwindcss/multiline": ["warn", { printWidth: 120 }],
     },
     settings: {
-      "readable-tailwind": {
-        entryPoint: "src/global.css",
+      "better-tailwindcss": {
+        entryPoint: "src/globals.css",
       },
     },
   },

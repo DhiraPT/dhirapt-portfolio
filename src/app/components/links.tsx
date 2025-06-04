@@ -17,7 +17,6 @@ export const Links = () => {
         <li>
           <Link
             className={`
-              link
               ${pathname === "/" ? "active" : ""}
             `}
             href="/"
@@ -28,7 +27,6 @@ export const Links = () => {
         <li>
           <Link
             className={`
-              link
               ${pathname === "/#experience" ? "active" : ""}
             `}
             href="#experience"
@@ -39,7 +37,6 @@ export const Links = () => {
         <li>
           <Link
             className={`
-              link
               ${pathname === "/#projects" ? "active" : ""}
             `}
             href="#projects"
@@ -50,7 +47,6 @@ export const Links = () => {
         <li>
           <Link
             className={`
-              link
               ${pathname === "/#oss-contributions" ? "active" : ""}
             `}
             href="#oss-contributions"
