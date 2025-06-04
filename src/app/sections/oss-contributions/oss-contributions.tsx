@@ -249,9 +249,9 @@ export default function OSSContributions() {
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           className={`
-            w-full rounded-lg border border-slate-300 bg-white px-4 py-2 text-sm text-slate-900
+            w-full rounded-lg border border-slate-300 bg-white px-4 py-2 text-sm text-slate-900 outline-none
             hover:border-indigo-600
-            focus:ring-2 focus:ring-indigo-600 focus:outline-none
+            focus:ring-2 focus:ring-indigo-600
             sm:w-1/3
             dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100 dark:hover:border-indigo-400
             dark:focus:ring-indigo-400
@@ -263,7 +263,8 @@ export default function OSSContributions() {
             value={typeFilter}
             onChange={(e) => setTypeFilter(e.target.value)}
             className={`
-              cursor-pointer rounded-lg border border-slate-300 bg-white px-4 py-2 text-sm text-slate-900
+              cursor-pointer rounded-lg border border-slate-300 bg-white px-4 py-2 text-sm text-slate-900 outline-none
+              select-none
               hover:border-indigo-600
               focus:ring-2 focus:ring-indigo-600
               dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100 dark:hover:border-indigo-400

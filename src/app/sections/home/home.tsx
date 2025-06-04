@@ -100,7 +100,7 @@ export default function Home() {
           >
             <p
               className={`
-                mb-2 text-center text-sm text-slate-600
+                mb-2 text-center text-sm text-slate-600 select-none
                 dark:text-slate-400
               `}
             >

@@ -90,7 +90,7 @@ export const ProjectDialog = ({
                 </p>
 
                 <div className="mt-4">
-                  <div className="relative w-full max-w-screen overflow-hidden rounded-md">
+                  <div className="relative w-full max-w-screen overflow-hidden rounded-md select-none">
                     {isImage ? (
                       <>
                         {!isImageLoaded && (
@@ -154,6 +154,7 @@ export const ProjectDialog = ({
                     rel="noopener"
                     className={`
                       inline-flex items-center justify-center rounded-full bg-indigo-600 px-4 py-2 text-slate-100
+                      select-none
                       hover:bg-indigo-700
                     `}
                   >

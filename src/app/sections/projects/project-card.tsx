@@ -38,7 +38,7 @@ export const ProjectCard = ({
         dark:shadow-slate-800 dark:hover:shadow-slate-700
       `}
     >
-      <div className="relative aspect-square overflow-hidden">
+      <div className="relative aspect-square overflow-hidden select-none">
         {coverMediaUrl ? (
           <Image
             src={coverMediaUrl}
@@ -89,7 +89,7 @@ export const ProjectCard = ({
           whileTap={{ scale: 0.95 }}
           className={`
             inline-flex translate-y-2 transform cursor-pointer items-center rounded-full bg-indigo-600 px-4 py-2
-            text-slate-100 opacity-0 transition-all duration-300 ease-in-out
+            text-slate-100 opacity-0 transition-all duration-300 ease-in-out select-none
             group-hover/project-card:translate-y-0 group-hover/project-card:opacity-100
             hover:bg-indigo-700
           `}
