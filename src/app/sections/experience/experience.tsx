@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { ExperienceCard } from "./experience-card";
 import { formatDate } from "@/utils/date";
 import { motion, useScroll, useSpring } from "framer-motion";
-import { Database } from "@/types/supabase";
+import { Database } from "@/types/database.types";
 import { SectionHeading } from "@/app/components/section-heading";
 import { useTheme } from "next-themes";
 

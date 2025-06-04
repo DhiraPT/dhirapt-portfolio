@@ -19,7 +19,7 @@ import {
   BsChevronDoubleRight,
 } from "react-icons/bs";
 import { supabase } from "@/utils/supabase";
-import { Database } from "@/types/supabase";
+import { Database } from "@/types/database.types";
 
 type OpenSourceProject =
   Database["public"]["Tables"]["OpenSourceProjects"]["Row"];

@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { ProjectCard } from "./project-card";
 import { formatDate } from "@/utils/date";
-import { Database } from "@/types/supabase";
+import { Database } from "@/types/database.types";
 import { ProjectDialog } from "./project-dialog";
 import { SectionHeading } from "@/app/components/section-heading";
 
