@@ -1,16 +1,13 @@
 "use client";
 
-import { useState } from "react";
 import { motion } from "motion/react";
 import TypeComponent from "./_components/type-component";
-import ResumeDialogContent from "./_components/resume-dialog";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles, Terminal, Code2 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 
 export default function Home() {
-  const [isDialogOpen, setIsDialogOpen] = useState(false);
   const router = useRouter();
 
   return (
@@ -83,17 +80,20 @@ export default function Home() {
             <Button
               variant="outline"
               size="lg"
-              onClick={() => setIsDialogOpen(true)}
+              onClick={() =>
+                window.open(
+                  "https://lfjzmnveejtlimxyhvaa.supabase.co/storage/v1/object/public/general/Dhira_Tengara_Resume.pdf",
+                  "_blank",
+                )
+              }
               className={cn(
                 "border-border/60 h-11 rounded-full border px-8 text-sm font-semibold transition-all hover:scale-105",
                 "bg-background/50 hover:bg-accent/5 hover:border-accent/50 hover:text-accent backdrop-blur-sm",
               )}
               aria-label="View my resume"
             >
-              View Resume
+              View My Resume
             </Button>
-
-            <ResumeDialogContent open={isDialogOpen} onOpenChange={setIsDialogOpen} />
           </div>
         </motion.div>
 

@@ -38,6 +38,14 @@ export const metadata: Metadata = {
     siteName: "DhiraPT's Lab",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: `/api/og?title=${encodeURIComponent("DhiraPT's Lab")}`,
+        width: 1200,
+        height: 630,
+        alt: "DhiraPT's Lab",
+      },
+    ],
   },
   robots: {
     index: true,
