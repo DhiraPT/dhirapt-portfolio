@@ -9,7 +9,7 @@ export default async function ProjectsPage() {
   const { data: projects, error } = await supabase
     .from("Projects")
     .select("*")
-    .order("start_date", { ascending: false });
+    .order("end_date", { ascending: false });
 
   if (error) {
     return (

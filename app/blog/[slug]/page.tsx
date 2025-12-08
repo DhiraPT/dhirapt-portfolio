@@ -44,14 +44,6 @@ export async function generateMetadata({
       authors: ["Dhiraputta Pathama Tengara"],
       url: url,
       siteName: "DhiraPT's Lab",
-      images: [
-        {
-          url: `${baseUrl}/api/og?title=${encodeURIComponent(post.title)}`,
-          width: 1200,
-          height: 630,
-          alt: post.title,
-        },
-      ],
     },
     twitter: {
       card: "summary_large_image",
