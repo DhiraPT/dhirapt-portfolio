@@ -37,10 +37,15 @@ export default function BlogContent({ post }: { post: BlogPost }) {
           Back to Blog
         </Link>
 
-        <header className="border-border/40 mb-6 border-b pb-4 sm:mb-8 sm:pb-6 lg:mb-10">
+        <header className="border-border/40 mb-3 border-b pb-2 sm:mb-4 sm:pb-3 lg:mb-5">
           <h1 className="text-foreground mb-3 text-3xl leading-tight font-bold tracking-tight sm:mb-4 sm:text-4xl lg:text-5xl">
             {post.title}
           </h1>
+          {post.subtitle && (
+            <p className="text-muted-foreground mb-4 text-base leading-relaxed sm:text-lg">
+              {post.subtitle}
+            </p>
+          )}
           <div className="text-muted-foreground flex items-center gap-2 text-sm sm:text-base">
             <Calendar className="h-4 w-4 sm:h-5 sm:w-5" />
             <time dateTime={post.updated_at}>{formatDateComplete(post.updated_at)}</time>
