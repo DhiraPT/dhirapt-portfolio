@@ -115,11 +115,7 @@ export const NavBar = () => {
             <DrawerContent className="border-border/40 bg-background/95 h-full rounded-none border-l backdrop-blur-xl">
               <div className="flex h-full flex-col p-6">
                 <DrawerHeader className="border-border/40 flex items-center justify-between border-b px-0 pb-8">
-                  <DrawerTitle className="flex items-center text-xl font-bold">
-                    <span className="from-accent bg-linear-to-r to-purple-400 bg-clip-text text-transparent">
-                      Navigation
-                    </span>
-                  </DrawerTitle>
+                  <DrawerTitle className="sr-only">Navigation</DrawerTitle>
                   <DrawerClose asChild>
                     <button className="hover:bg-accent/10 rounded-full p-2 transition-colors">
                       <X className="text-muted-foreground h-6 w-6" />
